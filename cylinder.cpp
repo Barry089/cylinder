@@ -3,7 +3,7 @@
 #include "Point2.h"
 const double PI = 3.1415926;
 
-class Circle : protected Point {
+class Circle : public Point {
     protected:
         double radius;
     public:
@@ -51,7 +51,24 @@ int main()
     CY.ShowCylinder();
 
     cout << "total area: " << CY.area() << endl;
-    cout << "volume: " << CY.volume() << endl;
+    cout << "volume: " << CY.volume() << endl << endl;
+
+    Point P(1, 1);
+    Circle Cir(15.5, 20, 20);
+    Cylinder CY2(50, 15, 300, 300);
+
+    Point * Pp;
+    Pp = &P;
+    Pp->ShowXY();
+
+    P = Cir;
+    P.ShowXY();
+
+    Pp = &Cir;
+    Pp->ShowXY();
+
+    Point &Pp2 = Cir;   // 派生类对象初始化基类的引用；
+    Pp2.ShowXY();
     
     return 0;
 }
