@@ -22,7 +22,7 @@ class Circle : public Point {
         }
 };
 
-class Cylinder : protected Circle {
+class Cylinder : public Circle {
     private:
         double height;
     public:
@@ -69,6 +69,13 @@ int main()
 
     Point &Pp2 = Cir;   // 派生类对象初始化基类的引用；
     Pp2.ShowXY();
+
+    Pp = &CY2;      // 基类指针；
+    Pp->ShowXY();
+    cout << endl;
+
+    Circle &RC = CY2;  // 基类引用；
+    RC.ShowCir();
     
     return 0;
 }
