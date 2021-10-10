@@ -21,3 +21,26 @@ class Circle : protected Point {
             cout << "Radius: " << radius << endl;
         }
 };
+
+class Cylinder : protected Circle {
+    private:
+        double height;
+    public:
+        Cylinder(double H, double R, int X, int Y) : Circle(R, X, Y)
+        {
+            height = H;
+        }
+        double volume()
+        {
+            return Circle::area() * height;
+        }
+        double area()
+        {
+            return 2 * Circle::area() + 2 * PI * radius * height;
+        }
+        void ShowCylinder()
+        {
+            ShowCir();
+            cout << "Height of cylinder: " << height << endl;
+        }
+};
