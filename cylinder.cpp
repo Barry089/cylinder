@@ -44,3 +44,14 @@ class Cylinder : protected Circle {
             cout << "Height of cylinder: " << height << endl;
         }
 };
+
+int main()
+{
+    Cylinder CY(50, 10, 100, 200);
+    CY.ShowCylinder();
+
+    cout << "total area: " << CY.area() << endl;
+    cout << "volume: " << CY.volume() << endl;
+    
+    return 0;
+}
