@@ -45,6 +45,18 @@ class Cylinder : public Circle {
         }
 };
 
+void display(Point p)
+{
+    p.ShowXY();
+}
+void display2(Point * pt)
+{
+    pt->ShowXY();
+}
+void display3(Point &refp)
+{
+    refp.ShowXY();
+}
 int main()
 {
     Cylinder CY(50, 10, 100, 200);
@@ -76,6 +88,18 @@ int main()
 
     Circle &RC = CY2;  // 基类引用；
     RC.ShowCir();
-    
+
+    display(P);
+    display(Cir);
+    display(CY2);
+
+    display2(&P);
+    display2(&Cir);
+    display2(&CY2);
+
+    display3(P);
+    display3(Cir);
+    display3(CY2);
+
     return 0;
 }
